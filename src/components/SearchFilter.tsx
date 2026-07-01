@@ -9,12 +9,10 @@ type SearchFilterProps = {
 const SearchFilter = ({ searchTerm, setSearchTerm }: SearchFilterProps) => {
   return (
     <>
-    <div className="mb-5 p-5 bg-gray-900 rounded-2xl shadow-xl border border-gray-800">
-      <div className="flex items-center border border-gray-700 rounded-xl overflow-hidden focus-within:ring-4
-       focus-within:ring-orange-600/50 transition duration-300 bg-gray-800">
-        <Search className='w-5 h-5 text-gray-500 ml-4 '/>
-        <input type="text"  placeholder='Search high-performace product by name or feature...' className='w-full p-4 outline-none
-         text-white bg-gray-800 placeholder-gray-500 text-base font-medium'
+    <div className="mb-4 rounded-2xl border border-gray-800 bg-gray-900 p-3 shadow-xl sm:mb-5 sm:p-5">
+      <div className="flex items-center overflow-hidden rounded-xl border border-gray-700 bg-gray-800 transition duration-300 focus-within:ring-4 focus-within:ring-orange-600/50">
+        <Search className='ml-3 h-4 w-4 text-gray-500 sm:ml-4 sm:h-5 sm:w-5'/>
+        <input type="text"  placeholder='Search products...' className='w-full bg-gray-800 p-3 text-sm font-medium text-white outline-none placeholder-gray-500 sm:p-4 sm:text-base'
          aria-label='Search Products'
          value={searchTerm} 
          onChange={(e)=>setSearchTerm(e.target.value)}

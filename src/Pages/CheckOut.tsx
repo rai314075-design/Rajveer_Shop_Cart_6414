@@ -31,13 +31,13 @@ const CheckOut = () => {
 
   return (
     <>
-      <div className="container mx-auto px-4 md:px-8 pt-8">
-        <h2 className="text-5xl font-extrabold text-white mb-10 tracking-tight">
+      <div className="mx-auto max-w-7xl px-3 pt-4 sm:px-4 sm:pt-6 md:px-8 md:pt-8">
+        <h2 className="mb-6 text-3xl font-extrabold tracking-tight text-white sm:mb-8 sm:text-4xl lg:text-5xl">
           Finalize Order
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          <div className="lg:col-span-2 p-8 bg-gray-900 rounded-2xl shadow-2xl border border-gray-800 ">
-            <h3 className="text-3xl font-bold text-orange-400 mb-6 flex items-center space-x-3 border-b border-gray-700 pb-4">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-10">
+          <div className="rounded-2xl border border-gray-800 bg-gray-900 p-4 shadow-2xl sm:p-6 lg:col-span-2 lg:p-8">
+            <h3 className="mb-6 flex items-center gap-3 border-b border-gray-700 pb-4 text-2xl font-bold text-orange-400 sm:text-3xl">
               <MapPin className="w-7 h-7 text-orange-500" />
               <span>Shipping Information</span>
             </h3>
@@ -58,14 +58,14 @@ const CheckOut = () => {
                     value={deliveryDetails[key as keyof typeof deliveryDetails]}
                     onChange={handleChange}
                     required
-                    className="mt-1 block w-full px-5 py-3 border border-gray-700 rounded-xl shadow-inner text-white bg-gray-800 placeholder-gray-500"
+                    className="mt-1 block w-full rounded-xl border border-gray-700 bg-gray-800 px-4 py-3 text-white shadow-inner placeholder-gray-500 sm:px-5"
                   />
                 </div>
               ))}
               <div className="pt-6">
                 <button
                   type="submit"
-                  className="w-full py-4 bg-orange-600 text-white font-extrabold text-xl rounded-full shadow-lg shadow-orange-800/50 cursor-pointer hover:bg-orange-700 transition duration-300 flex items-center justify-center space-x-2 transform hover:ring-4 hover:ring-pink-600/50 uppercase tracking-wider"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-orange-600 py-3 text-base font-extrabold uppercase tracking-wider text-white shadow-lg shadow-orange-800/50 transition duration-300 hover:bg-orange-700 hover:ring-4 hover:ring-pink-600/50 sm:py-4 sm:text-xl"
                 >
                   <span>
                     ₹ Pay and confirm Order (₹ {cartTotal.toFixed(2)})
@@ -77,12 +77,10 @@ const CheckOut = () => {
           {/* Order Summary in CheckOut */}
 
           <div
-            className="lg:col-span-1 p-8 bg-gray-900 rounded-2xl shadow-2xl
-           border-1-4 sticky top-20 h-fit border border-gray-800"
+            className="h-fit rounded-2xl border border-gray-800 bg-gray-900 p-4 shadow-2xl sm:p-6 lg:col-span-1 lg:sticky lg:top-20 lg:p-8"
           >
             <h3
-              className="text-3xl font-bold text-white mb-5 border-b 
-             border-y-gray-700 pb-3 flex items-center space-x-2"
+              className="mb-5 flex items-center gap-2 border-b border-y-gray-700 pb-3 text-2xl font-bold text-white sm:text-3xl"
             >
               {/* <div className="flex justify-between"> */}
               <Package className="w-6 h-6 text-orange-400" />

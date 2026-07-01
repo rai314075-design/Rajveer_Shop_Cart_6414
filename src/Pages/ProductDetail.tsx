@@ -31,35 +31,35 @@ const ProductDetail = () => {
 
   return (
     <>
-      <div className=" container `mx-auto` px-4 md:px-6 bg-gray-900 min-h-screen rounded-2xl shadow-2xl my-12 py-6 md:py-8 border border-gray-800 mx-12 ">
+      <div className="mx-2 my-4 min-h-screen rounded-2xl border border-gray-800 bg-gray-900 px-3 py-4 shadow-2xl sm:mx-4 sm:my-8 sm:px-4 sm:py-6 md:mx-6 md:px-6 md:py-8 lg:mx-12">
         <Link to={"/"}>
           <button className="cursor-pointer flex items-center text-gray-400 hover:text-orange-400 transition duration-150 mb-8 font-semibold text-base">
             <ChevronLeft className="w-5 h-5 mr-1" />
             <span>Back to All Products</span>
           </button>
         </Link>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-25">
-          <div className="w-full ">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
+          <div className="flex w-full justify-center">
             <img
               src={product?.image}
               alt={product?.name ?? "Product image"}
-              className="w-\[400px\] h-\[400px\] object-cover rounded-2xl shadow-2xl shadow-gray-950/50 border-4 border-gray-800"
+              className="h-[260px] w-full max-w-[420px] rounded-2xl border-4 border-gray-800 object-cover shadow-2xl shadow-gray-950/50 sm:h-[320px] lg:h-[420px]"
             />
           </div>
           <div className="flex flex-col justify-center space-y-4">
             <div>
-              <h1 className="text-3xl font-extrabold text-white leading-tight mb-4 tracking-tighter">
+              <h1 className="mb-4 text-2xl font-extrabold leading-tight tracking-tighter text-white sm:text-3xl">
                 {product?.name}
               </h1>
             </div>
-            <p className="text-2xl font-extrabold text-orange-400 mb-4">
+            <p className="mb-4 text-xl font-extrabold text-orange-400 sm:text-2xl">
               ₹{product?.price.toFixed(2)}
             </p>
-            <h2 className="text-lg font-bold text-gray-200 mb-2 border-b border-orange-900/50 pb-2 flex items-center space-x-2">
+            <h2 className="mb-2 flex items-center gap-2 border-b border-orange-900/50 pb-2 text-base font-bold text-gray-200 sm:text-lg">
               <Tag className="w-5 h-5 text-orange-500" />
               <span className="whitespace-nowrap">Product Overview</span>
             </h2>
-            <p className="text-gray-400 text-base leading-relaxed mb-3">
+            <p className="mb-3 text-sm leading-relaxed text-gray-400 sm:text-base">
               {product?.description}
             </p>
 
@@ -84,20 +84,17 @@ const ProductDetail = () => {
               </li>
             </ul>
 
-            <div className="mt-5 space-y-4 flex justify-center items-center flex-col">
+            <div className="mt-5 flex flex-col items-center justify-center space-y-3 sm:space-y-4">
               <button
                 onClick={() => product && addToCart(product)}
-                className="w-full py-3 bg-orange-600 text-white font-bold rounded-full shadow-lg 
-              shadow-orange-800/50 cursor-pointer hover:bg-orange-700 transition duration-300 flex items-center
-               justify-center space-x-2 transform hover:ring-4 hover:ring-pink-600/50  uppercase tracking-wider"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-orange-600 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-orange-800/50 transition duration-300 hover:bg-orange-700 hover:ring-4 hover:ring-pink-600/50 sm:text-base"
               >
                 <ShoppingCart className="w-6 h-6" />
                 <span>Add to Cart</span>
               </button>
               <Link
                 to={"/"}
-                className="w-full  py-3 border-2 border-orange-600 text-orange-400 font-bold rounded-full
-                 cursor-pointer hover:bg-orange-900/50 transition duration-300  uppercase tracking-wider text-center"
+                className="w-full rounded-full border-2 border-orange-600 py-3 text-center text-sm font-bold uppercase tracking-wider text-orange-400 transition duration-300 hover:bg-orange-900/50 sm:text-base"
               >
                 Keep Shopping
               </Link>

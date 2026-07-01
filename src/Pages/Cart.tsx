@@ -7,8 +7,8 @@ const CartPage = () => {
   const { cart, cartCount, cartTotal } = useCart();
   return (
     <>
-      <div className="container mx-auto px-4 md:px-8 pt-8">
-        <div className="flex items-center mb-10">
+      <div className="mx-auto max-w-7xl px-3 pt-4 sm:px-4 sm:pt-6 md:px-8 md:pt-8">
+        <div className="mb-6 flex items-center sm:mb-8 lg:mb-10">
           <Link
             to={"/"}
             className="flex items-center text-white-400 hover:text-orange-400 transition duration-150 font-semibold text-lg"
@@ -17,18 +17,17 @@ const CartPage = () => {
             <span>Back to Store</span>
           </Link>
         </div>
-        <h2 className="text-4xl font-extrabold text-white mb-10 tracking-tight">
+        <h2 className="mb-6 text-2xl font-extrabold tracking-tight text-white sm:mb-8 sm:text-3xl lg:text-4xl">
           Shopping Cart ({cartCount})
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-10">
           <div className="lg:col-span-2 space-y-4">
             {cart.map((item) => (
               <CartItem key={item.id} item={item} />
             ))}
           </div>
           <div
-            className="lg:col-span-1 p-8 bg-gray-900 rounded-2xl shadow-2xl
-           border-1-4 sticky top-20 h-fit border border-gray-800"
+            className="h-fit rounded-2xl border border-gray-800 bg-gray-900 p-4 shadow-2xl sm:p-6 lg:col-span-1 lg:sticky lg:top-20 lg:p-8"
           >
             <h3
               className="text-3xl font-bold text-white mb-5 border-b 
@@ -61,9 +60,7 @@ const CartPage = () => {
             </div>
             <Link
               to={"/CheckOut"}
-              className="w-full mt-8 py-4 bg-orange-600 text-white font-extrabold text-xl rounded-full shadow-lg 
-              shadow-orange-800/50 cursor-pointer hover:bg-orange-700 transition duration-300 flex items-center
-               justify-center space-x-2 transform hover:ring-4 hover:ring-pink-600/50  uppercase tracking-wider"
+              className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-orange-600 py-3 text-base font-extrabold uppercase tracking-wider text-white shadow-lg shadow-orange-800/50 transition duration-300 hover:bg-orange-700 hover:ring-4 hover:ring-pink-600/50 sm:mt-8 sm:py-4 sm:text-xl"
             >
               <Zap className="w-6 h-6" />
               <span>Proceed Securely</span>
