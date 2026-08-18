@@ -24,13 +24,13 @@ const ProductList = () => {
   }>;
   return (
     <>
-      <div className="container mx-auto px-4 md:px-8 pt-8">
+      <div className="mx-auto max-w-7xl px-3 pt-4 sm:px-4 sm:pt-6 md:px-8 md:pt-8">
         <SearchFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <CategoryFilter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-        <h2 className="text-2xl font-extrabold mx-auto px-4 md:px-4 pt-4">
+        <h2 className="mx-auto px-1 pt-4 text-xl font-extrabold sm:text-2xl">
           Featured Gear ({products.length} Items)
         </h2>
-        <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center items-center">
+        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 md:grid-cols-3 lg:grid-cols-4 lg:gap-8">
           {filterProducts.map((product, index) => (
             <div key={index}>
               <ProductCardComponent product={product} />

@@ -21,27 +21,24 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
   const increaseQ = () => addToCart(item);
   const descreaseQ = () => removeFromCart(item.id);
   return (
-    <div
-      className="flex flex-col items-center sm:flex-row justify-between p-4 sm:p-6 mb-4 bg-gray-900 reounded-xl  
-    shadow-2xl border-gray-800 transition duration-300 hover:border-orange-600/50"
-    >
-      <div className="flex items-center space-x-4 w-full sm:w-auto">
+    <div className="mb-4 flex flex-col gap-4 rounded-2xl border border-gray-800 bg-gray-900 p-4 shadow-2xl transition duration-300 hover:border-orange-600/50 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+      <div className="flex w-full items-center gap-3 sm:w-auto sm:gap-4">
         <img
           src={item.image}
           alt={item.name}
-          className="w-24 h-24 object-cover rounded-lg border-2 border-gray-700"
+          className="h-20 w-20 rounded-lg border-2 border-gray-700 object-cover sm:h-24 sm:w-24"
         />
         <div className="grow">
-          <h3 className="text-xl font-bold text-white line-clamp-1">
+          <h3 className="line-clamp-1 text-base font-bold text-white sm:text-xl">
             {item.name}
           </h3>
-          <p className="text-lg text-orange-400 font-semibold">
+          <p className="text-base font-semibold text-orange-400 sm:text-lg">
             ₹ {item.price.toFixed(2)}
           </p>
         </div>
       </div>
-      <div className="flex items-center justify-between sm:justify-end w-full sm:w-2/5 sm:mt-0">
-        <div className="flex items-center border border-gray-700 rounded-full  overflow-hidden shadow-lg ">
+      <div className="flex w-full items-center justify-between gap-3 sm:w-2/5 sm:justify-end sm:gap-4">
+        <div className="flex items-center overflow-hidden rounded-full border border-gray-700 shadow-lg">
           <button
             onClick={descreaseQ}
             className=" p-1 text-gray-400 bg-gray-800 hover:bg-gray-700 transition duration-150 w-8 h-8 items-center justify-center"
@@ -59,13 +56,12 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
             +
           </button>
         </div>
-        <p className=" font-extrabold ml-3 text-orange-300 w-max Whitespace-nowrap text-right hidden md:block">
+        <p className="ml-1 w-max whitespace-nowrap text-right text-sm font-extrabold text-orange-300 sm:ml-3 sm:text-base md:block">
           ₹ {(item.price * (item.quantity ?? 0)).toFixed(2)}
         </p>
         <button
           onClick={() => removeFromCart(item.id, true)}
-          className="p-3 ml-3 bg-red-800/20 text-red-400 rounded-full 
-        hover:bg-red-800/40 transition duration-150 shadow-md "
+          className="ml-1 rounded-full bg-red-800/20 p-2.5 text-red-400 shadow-md transition duration-150 hover:bg-red-800/40 sm:ml-3 sm:p-3"
         >
           <X className="w-5 h-5" />
         </button>

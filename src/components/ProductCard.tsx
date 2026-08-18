@@ -15,11 +15,7 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
   const { addToCart } = useCart();
   return (
     <>
-      <div
-        className=" bg-gray-800 rounded-2xl shadow-xl overflow-hidden 
-      flex flex-col h-full w-full transition duration-500 transform border-gray-800 group hover:scale-[1.03]
-      hover:shadow-orange-900/40"
-      >
+      <div className="flex h-full w-full flex-col overflow-hidden rounded-2xl border border-gray-800 bg-gray-800 shadow-xl transition duration-500 group hover:scale-[1.01] hover:shadow-orange-900/40">
         <Link
           to={`/product/${product.id}`}
           className="relative cursor-pointer overflow-hidden"
@@ -27,27 +23,20 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-56 object-cover object-center transition duration-500 
-            group-hover:scale-110 group-hover:opacity-90"
+            className="h-44 w-full object-cover object-center transition duration-500 sm:h-56 group-hover:scale-110 group-hover:opacity-90"
           />
-          <div
-            className="absolute bottom-0 left-0 bg-orange-600/99 text-white px-5 py-2 text-xl
-           font-extrabold rounded-tr-xl shadow-lg"
-          >
+          <div className="absolute bottom-0 left-0 rounded-tr-xl bg-orange-600/99 px-4 py-2 text-lg font-extrabold text-white shadow-lg sm:px-5 sm:text-xl">
             ₹{product.price.toFixed(2)}
           </div>
         </Link>
-        <div className="p-5 flex flex-col grow h=56 ">
+        <div className="flex grow flex-col p-4 sm:p-5">
           <Link to={`/product/${product.id}`}>
-            <h3
-              className="text-2xl font-extrabold text-white mb-2  cursor-pointer
-             hover:text-orange-400 transition duration-200 line-clamp-1"
-            >
+            <h3 className="mb-2 line-clamp-1 cursor-pointer text-xl font-extrabold text-white transition duration-200 hover:text-orange-400 sm:text-2xl">
               {product.name}
             </h3>
           </Link>
 
-          <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+          <p className="mb-4 line-clamp-2 text-sm text-gray-400">
             {product.description}
           </p>
           <div className="flex items-center text-xs text-gray-500 mb-4">
@@ -56,12 +45,10 @@ const ProductCard = ({ product }: { product: ProductsData }) => {
             </span>
           </div>
           <button
-          onClick={() =>addToCart(product)}
-            className="max-auto w-full py-3 bg-orange-600 text-white font-bold rounded-full
-           shadow-lg shadow-orange-800/50 cursor-pointer hover:bg-orange-700 transition duration-300
-           flex items-center justify-center space-x-2 transform hover:ring-4 hover:ring-pink-600/50 to uppercase tracking-wider"
+            onClick={() => addToCart(product)}
+            className="mt-auto flex w-full items-center justify-center gap-2 rounded-full bg-orange-600 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-orange-800/50 transition duration-300 hover:bg-orange-700 hover:ring-4 hover:ring-pink-600/50 sm:text-base"
           >
-            <ShoppingCart className="w-5 h-5" />
+            <ShoppingCart className="h-5 w-5" />
             <span>Add to Cart</span>
           </button>
         </div>
