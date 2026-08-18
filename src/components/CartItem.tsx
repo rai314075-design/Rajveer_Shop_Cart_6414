@@ -1,5 +1,6 @@
 import { useCart } from "../context/CartContext";
-import { X } from "lucide-react";
+import {  X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ProductsTypes {
   id: number;
@@ -23,11 +24,11 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
   return (
     <div className="mb-4 flex flex-col gap-4 rounded-2xl border border-gray-800 bg-gray-900 p-4 shadow-2xl transition duration-300 hover:border-orange-600/50 sm:flex-row sm:items-center sm:justify-between sm:p-6">
       <div className="flex w-full items-center gap-3 sm:w-auto sm:gap-4">
-        <img
+       <Link to={"/"}>  <img
           src={item.image}
           alt={item.name}
           className="h-20 w-20 rounded-lg border-2 border-gray-700 object-cover sm:h-24 sm:w-24"
-        />
+        /> </Link>
         <div className="grow">
           <h3 className="line-clamp-1 text-base font-bold text-white sm:text-xl">
             {item.name}
