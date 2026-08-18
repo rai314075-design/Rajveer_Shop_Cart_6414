@@ -52,14 +52,14 @@ export const initialProducts = [
   },
   // Realistic Image URLs for Laptop (Chromebook)
   {
-  id: 609,
-  name: "HP Pavilion Plus, Intel Core i5-1335U-13th Gen Laptop, (16GB LPDDR5x,512GB SSD),IPS",
-  price: 69990,
-  image: "https://m.media-amazon.com/images/I/61s8J1vGi0L._SL1500_.jpg",
-  description:
-    "The ultimate smartphone experience with a 108MP camera and all-day battery life.",
-  category: "Laptop",
-},
+    id: 609,
+    name: "HP Pavilion Plus, Intel Core i5-1335U-13th Gen Laptop, (16GB LPDDR5x,512GB SSD),IPS",
+    price: 69990,
+    image: "https://m.media-amazon.com/images/I/61s8J1vGi0L._SL1500_.jpg",
+    description:
+      "The ultimate smartphone experience with a 108MP camera and all-day battery life.",
+    category: "Laptop",
+  },
   {
     id: 601,
     name: "iphone 17 air White",
@@ -69,7 +69,7 @@ export const initialProducts = [
       "Lightweight and fast, perfect for students and cloud-based work.",
     category: "Phone",
   },
-    {
+  {
     id: 609,
     name: "Sony Alpha ILCE-7RM3A Full-Frame 42.4MP Mirrorless",
     price: 120990,
@@ -105,7 +105,7 @@ export const initialProducts = [
       "Lightweight and fast, perfect for students and cloud-based work.",
     category: "Tablet",
   },
-   {
+  {
     id: 610,
     name: "Sony Alpha ILCE-7M3K Full-Frame 24.2MP Mirrorless Digital SLR Camera",
     price: 120990,
@@ -142,7 +142,7 @@ export const initialProducts = [
       "Lightweight and fast, perfect for students and cloud-based work.",
     category: "Camera",
   },
-    {
+  {
     id: 608,
     name: "HP Pavilion x360, 13th Gen Intel Core i5-1335U (16GB DDR4, 512GB SSD) Black",
     price: 69990,
@@ -150,6 +150,5 @@ export const initialProducts = [
     description:
       "The ultimate smartphone experience with a 108MP camera and all-day battery life.",
     category: "Laptop",
-  }, 
-
+  },
 ];

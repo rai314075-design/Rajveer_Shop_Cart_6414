@@ -40,11 +40,14 @@ const ProductDetail = () => {
         </Link>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-25">
           <div className="w-full ">
-            <img
-              src={product?.image}
-              alt={product?.name ?? "Product image"}
-              className="w-\[400px\] h-\[400px\] object-cover rounded-2xl shadow-2xl shadow-gray-950/50 border-4 border-gray-800"
-            />
+            <Link to={"/"}>
+              {" "}
+              <img
+                src={product?.image}
+                alt={product?.name ?? "Product image"}
+                className="w-\[400px\] h-\[400px\] object-cover rounded-2xl shadow-2xl shadow-gray-950/50 border-4 border-gray-800"
+              />{" "}
+            </Link>
           </div>
           <div className="flex flex-col justify-center space-y-4">
             <div>
